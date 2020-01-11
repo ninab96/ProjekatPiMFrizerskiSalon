@@ -45,7 +45,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblInfo = new System.Windows.Forms.Label();
             this.cmbDelatnosti = new System.Windows.Forms.ComboBox();
-            this.dropGodina = new System.Windows.Forms.ComboBox();
             this.dropMesec = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -109,6 +108,7 @@
             this.inpImePrezime.Name = "inpImePrezime";
             this.inpImePrezime.Size = new System.Drawing.Size(194, 20);
             this.inpImePrezime.TabIndex = 10;
+            this.inpImePrezime.TextChanged += new System.EventHandler(this.inpImePrezime_TextChanged);
             // 
             // inpBrojTelefona
             // 
@@ -154,7 +154,7 @@
             "31"});
             this.dropDan.Location = new System.Drawing.Point(239, 74);
             this.dropDan.Name = "dropDan";
-            this.dropDan.Size = new System.Drawing.Size(47, 21);
+            this.dropDan.Size = new System.Drawing.Size(75, 21);
             this.dropDan.TabIndex = 12;
             this.dropDan.Text = "Dan";
             this.dropDan.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -163,23 +163,23 @@
             // 
             this.dropVreme.FormattingEnabled = true;
             this.dropVreme.Items.AddRange(new object[] {
-            "7:00",
-            "8:00",
-            "9:00",
-            "10:00",
-            "11:00",
-            "12:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00",
-            "18:00",
-            "19:00",
-            "20:00"});
-            this.dropVreme.Location = new System.Drawing.Point(391, 74);
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"});
+            this.dropVreme.Location = new System.Drawing.Point(417, 74);
             this.dropVreme.Name = "dropVreme";
-            this.dropVreme.Size = new System.Drawing.Size(62, 21);
+            this.dropVreme.Size = new System.Drawing.Size(111, 21);
             this.dropVreme.TabIndex = 13;
             this.dropVreme.Text = "Vreme";
             // 
@@ -234,27 +234,6 @@
             this.cmbDelatnosti.TabIndex = 19;
             this.cmbDelatnosti.Text = "Usluga";
             // 
-            // dropGodina
-            // 
-            this.dropGodina.FormattingEnabled = true;
-            this.dropGodina.Items.AddRange(new object[] {
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025",
-            "2026",
-            "2027",
-            "2028",
-            "2029",
-            "2030"});
-            this.dropGodina.Location = new System.Drawing.Point(459, 74);
-            this.dropGodina.Name = "dropGodina";
-            this.dropGodina.Size = new System.Drawing.Size(69, 21);
-            this.dropGodina.TabIndex = 20;
-            this.dropGodina.Text = "Godina";
-            // 
             // dropMesec
             // 
             this.dropMesec.FormattingEnabled = true;
@@ -271,9 +250,9 @@
             "10",
             "11",
             "12"});
-            this.dropMesec.Location = new System.Drawing.Point(292, 74);
+            this.dropMesec.Location = new System.Drawing.Point(320, 74);
             this.dropMesec.Name = "dropMesec";
-            this.dropMesec.Size = new System.Drawing.Size(85, 21);
+            this.dropMesec.Size = new System.Drawing.Size(87, 21);
             this.dropMesec.TabIndex = 21;
             this.dropMesec.Text = "Mesec";
             // 
@@ -283,7 +262,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(863, 401);
             this.Controls.Add(this.dropMesec);
-            this.Controls.Add(this.dropGodina);
             this.Controls.Add(this.cmbDelatnosti);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.label6);
@@ -327,7 +305,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.ComboBox cmbDelatnosti;
-        private System.Windows.Forms.ComboBox dropGodina;
         private System.Windows.Forms.ComboBox dropMesec;
     }
 }

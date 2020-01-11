@@ -118,5 +118,43 @@ namespace WindowsFormsApp1
             return aktivnosti;
         }
 
+        public Boolean zakazi(int delatnost_id, String dan, String sat, String mesec, String imePrezime, String brojTelefona) {
+            try
+            {
+                string cs = @"server=localhost;userid=root;password=;database=frizerski";
+                var con = new MySqlConnection(cs);
+                con.Open();
+
+                var stmt = "SELECT COUNT(id) FROM `aktivnosti` WHERE status=0 AND " +
+                    "`sat` = " + sat + " AND `mesec` = " + mesec + " AND" +
+                    " `dan` = " + dan +" AND "+"`delatnost_id` = "+delatnost_id+";";
+                var exec = new MySqlCommand(stmt, con);
+                MySqlDataReader reader = exec.ExecuteReader();
+
+                int res = 0;
+                while (reader.Read())
+                {
+                    res += int.Parse(reader.GetString(0));
+                }
+                reader.Close();
+                if (res > 0)
+                {
+                    return false;
+                }
+                else {
+                  var stmt2 = "INSERT INTO `aktivnosti` (`id`, `broj_telefona`, `delatnost_id`, `dan`, `sat`, `status`, `mesec`) " +
+                              "VALUES(NULL,"+brojTelefona+","+delatnost_id+","+dan+","+sat+",'0',"+mesec+")";
+                   var exec2 = new MySqlCommand(stmt2, con);
+                    exec2.ExecuteNonQuery();
+                    return true;                
+                }
+            }
+            catch (Exception ez)
+            {
+                System.Diagnostics.Debug.WriteLine(ez.Message);
+                return false;
+            }
+         
+        }
     }
 }

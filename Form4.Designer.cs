@@ -347,7 +347,7 @@
             this.groupBox3.Controls.Add(this.listBox3);
             this.groupBox3.Location = new System.Drawing.Point(15, 336);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1191, 333);
+            this.groupBox3.Size = new System.Drawing.Size(1191, 290);
             this.groupBox3.TabIndex = 18;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Klijenti";
@@ -364,9 +364,9 @@
             // listBox6
             // 
             this.listBox6.FormattingEnabled = true;
-            this.listBox6.Location = new System.Drawing.Point(788, 43);
+            this.listBox6.Location = new System.Drawing.Point(788, 46);
             this.listBox6.Name = "listBox6";
-            this.listBox6.Size = new System.Drawing.Size(397, 264);
+            this.listBox6.Size = new System.Drawing.Size(397, 225);
             this.listBox6.TabIndex = 7;
             // 
             // listBox5
@@ -374,7 +374,7 @@
             this.listBox5.FormattingEnabled = true;
             this.listBox5.Location = new System.Drawing.Point(408, 46);
             this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(374, 264);
+            this.listBox5.Size = new System.Drawing.Size(374, 225);
             this.listBox5.TabIndex = 6;
             this.listBox5.SelectedIndexChanged += new System.EventHandler(this.listBox5_SelectedIndexChanged);
             // 
@@ -401,14 +401,14 @@
             this.listBox3.FormattingEnabled = true;
             this.listBox3.Location = new System.Drawing.Point(9, 46);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(393, 264);
+            this.listBox3.Size = new System.Drawing.Size(393, 225);
             this.listBox3.TabIndex = 0;
             // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1229, 681);
+            this.ClientSize = new System.Drawing.Size(1229, 636);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.inpIme);

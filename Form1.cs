@@ -68,8 +68,17 @@ namespace WindowsFormsApp1
 
         private void btnZakazi_Click(object sender, EventArgs e)
         {
-            //  lblInfo.Text = "Uspesno ste zakazali";
-          
+            AktivnostController a = new AktivnostController();
+            Delatnost d = (Delatnost)cmbDelatnosti.SelectedItem;
+            if (a.zakazi(d.id, dropDan.SelectedItem.ToString(), dropVreme.SelectedItem.ToString() ,dropMesec.SelectedItem.ToString(), inpImePrezime.Text, inpBrojTelefona.Text))
+            {
+                lblInfo.Text = "Uspesno ste zakazali";
+            }
+            else
+            {
+                lblInfo.Text = "Vas termin je zauzet";
+            }
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -96,8 +105,9 @@ namespace WindowsFormsApp1
                     delatnosti.Add(new Delatnost(reader.GetInt32("id"), reader.GetString("naziv"), reader.GetDouble("cena")));
                 }
 
-                foreach (Delatnost d in delatnosti) { 
-                cmbDelatnosti.Items.Add(d.ToString());
+                foreach (Delatnost d in delatnosti) {
+                    //cmbDelatnosti.Items.Add(d.ToString());
+                    cmbDelatnosti.Items.Add(d);
                 }
 
             }
@@ -108,6 +118,11 @@ namespace WindowsFormsApp1
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void inpImePrezime_TextChanged(object sender, EventArgs e)
         {
 
         }
