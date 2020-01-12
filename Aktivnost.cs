@@ -8,14 +8,13 @@ namespace WindowsFormsApp1
 {
     class Aktivnost
     {
-        public Aktivnost(int id, string brojTelefona, int id_delatnost, string dan, string sat, string godina, string mesec, int status)
+        public Aktivnost(int id, string brojTelefona, int id_delatnost, string dan, string sat, string mesec, int status)
         {
             this.id = id;
             this.brojTelefona = brojTelefona;
             this.id_delatnost = id_delatnost;
             this.dan = dan;
             this.sat = sat;
-            this.godina = godina;
             this.mesec = mesec;
             this.status = status;
         }
@@ -25,7 +24,6 @@ namespace WindowsFormsApp1
         public int id_delatnost { get; set; }
         public String dan { get; set; }
         public String sat { get; set; }
-        public String godina { get; set; }
         public String mesec { get; set; }
         public int status { get; set; }
     }

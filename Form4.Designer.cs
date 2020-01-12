@@ -57,8 +57,8 @@
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             this.lblInfo = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.listBox6 = new System.Windows.Forms.ListBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.listBox4 = new System.Windows.Forms.ListBox();
             this.listBox5 = new System.Windows.Forms.ListBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -339,8 +339,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.listBox6);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.listBox4);
             this.groupBox3.Controls.Add(this.listBox5);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label10);
@@ -352,36 +352,38 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Klijenti";
             // 
-            // label13
+            // label11
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(920, 27);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(98, 13);
-            this.label13.TabIndex = 8;
-            this.label13.Text = "Uradjene aktivnosti";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(986, 27);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(57, 13);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Nije dosao";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
-            // listBox6
+            // listBox4
             // 
-            this.listBox6.FormattingEnabled = true;
-            this.listBox6.Location = new System.Drawing.Point(788, 46);
-            this.listBox6.Name = "listBox6";
-            this.listBox6.Size = new System.Drawing.Size(397, 225);
-            this.listBox6.TabIndex = 7;
+            this.listBox4.FormattingEnabled = true;
+            this.listBox4.Location = new System.Drawing.Point(812, 46);
+            this.listBox4.Name = "listBox4";
+            this.listBox4.Size = new System.Drawing.Size(373, 225);
+            this.listBox4.TabIndex = 9;
+            this.listBox4.SelectedIndexChanged += new System.EventHandler(this.listBox4_SelectedIndexChanged);
             // 
             // listBox5
             // 
             this.listBox5.FormattingEnabled = true;
-            this.listBox5.Location = new System.Drawing.Point(408, 46);
+            this.listBox5.Location = new System.Drawing.Point(416, 46);
             this.listBox5.Name = "listBox5";
-            this.listBox5.Size = new System.Drawing.Size(374, 225);
+            this.listBox5.Size = new System.Drawing.Size(390, 225);
             this.listBox5.TabIndex = 6;
             this.listBox5.SelectedIndexChanged += new System.EventHandler(this.listBox5_SelectedIndexChanged);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(557, 27);
+            this.label12.Location = new System.Drawing.Point(583, 27);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(53, 13);
             this.label12.TabIndex = 5;
@@ -401,7 +403,7 @@
             this.listBox3.FormattingEnabled = true;
             this.listBox3.Location = new System.Drawing.Point(9, 46);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(393, 225);
+            this.listBox3.Size = new System.Drawing.Size(401, 225);
             this.listBox3.TabIndex = 0;
             // 
             // Form4
@@ -464,7 +466,7 @@
         private System.Windows.Forms.ListBox listBox5;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ListBox listBox6;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ListBox listBox4;
     }
 }

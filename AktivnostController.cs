@@ -32,7 +32,6 @@ namespace WindowsFormsApp1
                                    reader.GetInt32("delatnost_id"),
                                    reader.GetString("dan"),
                                    reader.GetString("sat"),
-                                   reader.GetString("godina"),
                                    reader.GetString("mesec"),
                                    reader.GetInt32("status")
                                ));
@@ -69,7 +68,6 @@ namespace WindowsFormsApp1
                                    reader.GetInt32("delatnost_id"),
                                    reader.GetString("dan"),
                                    reader.GetString("sat"),
-                                   reader.GetString("godina"),
                                    reader.GetString("mesec"),
                                    reader.GetInt32("status")
                                ));
@@ -104,7 +102,6 @@ namespace WindowsFormsApp1
                                    reader.GetInt32("delatnost_id"),
                                    reader.GetString("dan"),
                                    reader.GetString("sat"),
-                                   reader.GetString("godina"),
                                    reader.GetString("mesec"),
                                    reader.GetInt32("status")
                                ));
@@ -116,6 +113,45 @@ namespace WindowsFormsApp1
                 Console.WriteLine(ez.Message);
             }
             return aktivnosti;
+        }
+
+
+        public static List<Aktivnost> getSveAktivnostiNijeDosao() {
+
+            List<Aktivnost> aktivnosti = new List<Aktivnost>();
+            try
+            {
+                string cs = @"server=localhost;userid=root;password=;database=frizerski";
+                var con = new MySqlConnection(cs);
+                con.Open();
+
+                var stmt = "select * from aktivnosti where status=2;";
+                var exec = new MySqlCommand(stmt, con);
+                MySqlDataReader reader = exec.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    aktivnosti.Add(
+                        new Aktivnost(
+                                   reader.GetInt32("id"),
+                                   reader.GetString("broj_telefona"),
+                                   reader.GetInt32("delatnost_id"),
+                                   reader.GetString("dan"),
+                                   reader.GetString("sat"),
+                                   reader.GetString("mesec"),
+                                   reader.GetInt32("status")
+                               ));
+                }
+                return aktivnosti;
+            }
+            catch (Exception ez)
+            {
+                Console.WriteLine(ez.Message);
+            }
+            return aktivnosti;
+
+
+
         }
 
         public Boolean zakazi(int delatnost_id, String dan, String sat, String mesec, String imePrezime, String brojTelefona) {

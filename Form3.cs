@@ -31,7 +31,14 @@ namespace WindowsFormsApp1
 
         private void AdminView_Load(object sender, EventArgs e)
         {
+            initAktivnosti();
+        }
 
+        public void initAktivnosti() {
+            foreach (Aktivnost a in AktivnostController.getSveAktivnostiNeUradjene())
+            {
+                checkedListBox1.Items.Add(a.id + "\t" + a.brojTelefona + "\t");
+            }
         }
     }
 }

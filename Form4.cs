@@ -32,9 +32,9 @@ namespace WindowsFormsApp1
                 listBox5.Items.Add(a.id + "\t" + a.brojTelefona + "\t" + a.id_delatnost);
             }
 
-            foreach (Aktivnost a in AktivnostController.getSveAktivnostiUradjene())
+            foreach (Aktivnost a in AktivnostController.getSveAktivnostiNijeDosao())
             {
-                listBox6.Items.Add(a.id + "\t" + a.brojTelefona + "\t" + a.id_delatnost);
+                listBox4.Items.Add(a.id + "\t" + a.brojTelefona + "\t" + a.id_delatnost);
             }
             foreach (Klijent a in KlijentController.getSviKlijenti())
             {
@@ -139,6 +139,16 @@ namespace WindowsFormsApp1
             {
                 lblInfo.Text = "Neuspesno izbrisan radnik";
             }
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
